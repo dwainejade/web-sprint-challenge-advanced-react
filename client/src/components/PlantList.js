@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component } from "react";
 import axios from "axios";
 
@@ -18,7 +19,6 @@ export default class PlantList extends Component {
       .get("http://localhost:3333/plants")
       .then((res) => {
         this.setState({ plants: res.data.plantsData });
-        console.log(res.data.plantsData);
       })
       .catch((err) => console.error(err));
   }
@@ -37,7 +37,10 @@ export default class PlantList extends Component {
               <div className="plant-bottom-row">
                 <p>${plant.price}</p>
                 <p>☀️ {plant.light}</p>
-                <p>💦 {plant.watering}x/month</p>
+                <p>
+                  <span role="img" aria-label="water emoji">💦</span> 
+                  {plant.watering}x/month
+                  </p>
               </div>
               <button
                   className="plant-button"
