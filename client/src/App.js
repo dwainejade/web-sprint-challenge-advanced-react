@@ -19,6 +19,7 @@ function App() {
   // remove a plant from the cart
   const removeFromCart = (plant) => {
     setCart(cart.filter((p) => p.id !== plant.id));
+
   };
 
   return (
@@ -26,7 +27,7 @@ function App() {
       <Router>
         <nav className="container">
           <h1>
-            React Plants <span role="img">🌿</span>
+            React Plants <span role="img" aria-label="plant branch">🌿</span>
           </h1>
           <ul className="steps">
             <li>
